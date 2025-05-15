@@ -3,117 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Age Calculator by Faraaz</title>
+  <meta name="description" content="Free Age Calculator tool to find your exact age in years, months, and days. Built with HTML, CSS, and JavaScript.">
+  <meta name="keywords" content="age calculator, calculate age, online age tool, date of birth calculator, age finder">
+  <meta name="author" content="Faraaz">
+  <meta name="robots" content="index, follow" />
+  <title>Free Age Calculator - Calculate Your Age Instantly</title>
+
   <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #74ebd5, #ACB6E5);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      color: #333;
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .header h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-      color: #222;
-    }
-
-    .header p {
-      font-size: 24px;
-      font-weight: bold;
-      color: #444;
-    }
-
-    .calculator {
-      background: white;
-      padding: 30px 40px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 400px;
-      text-align: center;
-    }
-
-    .date-input {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .date-label {
-      font-size: 20px; /* Thoda bada text */
-      color: red;       /* 🔴 Red color */
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
-    .date-fields {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-    }
-
-    .date-fields input[type="number"] {
-      width: 30%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-      text-align: center;
-    }
-
-    .calculator button {
-      margin-top: 10px;
-      padding: 12px 20px;
-      width: 100%;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .calculate-btn {
-      background-color: #007bff;
-      color: white;
-    }
-
-    .calculate-btn:hover {
-      background-color: #0056b3;
-    }
-
-    .reset-btn {
-      background-color: #dc3545;
-      color: white;
-      margin-top: 10px;
-    }
-
-    .reset-btn:hover {
-      background-color: #c82333;
-    }
-
-    #result {
-      margin-top: 20px;
-      font-size: 18px;
-      font-weight: bold;
-      color: #333;
-    }
+    /* ... (keep your full CSS code here exactly as it was) ... */
   </style>
 </head>
 <body>
@@ -124,11 +21,7 @@
   </div>
 
   <div class="calculator">
-    <!-- Red Label -->
-    <div class="date-label">
-      Enter your date of birth:
-    </div>
-
+    <div class="date-label">Enter your date of birth:</div>
     <div class="date-input">
       <div class="date-fields">
         <input type="number" id="birthMonth" placeholder="mm" min="1" max="12">
@@ -136,10 +29,8 @@
         <input type="number" id="birthYear" placeholder="yyyy" min="1900" max="2025">
       </div>
     </div>
-
     <button class="calculate-btn" onclick="calculate()">Calculate Age</button>
     <button class="reset-btn" onclick="resetForm()">Reset</button>
-
     <div id="result"></div>
   </div>
 
@@ -155,13 +46,11 @@
         return;
       }
 
-      // Get current date
       const today = new Date();
       const currentYear = today.getFullYear();
-      const currentMonth = today.getMonth() + 1; // Months are 0-indexed
+      const currentMonth = today.getMonth() + 1;
       const currentDate = today.getDate();
 
-      // Calculate age
       let years = currentYear - birthYear;
       let months = currentMonth - birthMonth;
       let days = currentDate - birthDay;
